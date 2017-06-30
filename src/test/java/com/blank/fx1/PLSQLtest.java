@@ -2,6 +2,8 @@ package com.blank.fx1;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.junit.Test;
@@ -34,7 +36,7 @@ public class PLSQLtest extends Abstract4Test {
 		System.out.println("Done");
 	}*/
 	
-	@Test
+	/*@Test
 	public void test3() throws Exception {
 		QnaDTO qnaDTO=new QnaDTO();
 		qnaDTO.setNum(161);
@@ -43,5 +45,13 @@ public class PLSQLtest extends Abstract4Test {
 		qnaDTO.setContents("updated!");
 		qnaDAO.reply(qnaDTO);
 		System.out.println("Done");
+	}*/	
+	
+	@Test
+	public void test() throws Exception {
+		List<QnaDTO> qnaDTO=qnaDAO.list(1, 10);
+		for(QnaDTO q:qnaDTO){
+			System.out.println(q.getTitle());
+		}
 	}
 }
